@@ -1,0 +1,9 @@
+FROM node:16-alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install
+COPY . .
+CMD [ "npm", "run", "start" ]
+
+# docker build -f Dockerfile.dev .
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app  e4f592568e670bb2b2d43
