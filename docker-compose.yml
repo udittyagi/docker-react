@@ -4,8 +4,12 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile.dev
+    # build: .
     ports: 
       - "3000:3000"
     volumes:
       - /app/node_modules
       - .:/app
+
+# restart is used for the restart policies
+# 1. "no", 2. always, 3.on-failure, 4. unless-stopped
